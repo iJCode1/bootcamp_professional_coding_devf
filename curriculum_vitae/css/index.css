@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import './container.css';
+@import './title.css';
+@import './hero.css';
+@import './main.css';
+:root{
+  --purple10: #8653c4;
+  --purple20: #513d89;
+  --purple30: #513d89;
+  --blue10: #5376c4;
+  --blue20: #3a5289;
+  --gray10: #ebedee;
+}
+body{
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+}

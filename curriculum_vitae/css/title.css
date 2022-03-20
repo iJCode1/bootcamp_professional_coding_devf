@@ -1,0 +1,23 @@
+.title{
+  padding-block-end: .8rem;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: .4rem;
+  margin: 0;
+  margin-block-end: 1.5rem;
+}
+.title::after{
+  content: '';
+  inline-size: 4.5rem;
+  border-block-end: 8px solid var(--blue10);
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+}
+@media screen and (min-width: 768px){
+  .title{
+    font-size: 1.5rem;
+  }
+
+}

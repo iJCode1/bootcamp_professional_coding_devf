@@ -1,0 +1,105 @@
+.main-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+/* Profile */
+.profile-description{
+  margin: 0;
+}
+/* Contact */
+.contact-items{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contact-item{
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.contact-icon.is-location{
+  align-self: flex-start;
+}
+.contact-text{
+  margin: 0;
+}
+/* Languages */
+.languages-paragraph{
+  margin: 0;
+}
+/* Skills & Education*/
+.skills-item,
+.education-item{
+  margin-block-end: .5rem;
+}
+/* Complementary */
+.complementary{
+  margin-block-end: 2rem;
+  padding-block-end: 1rem;
+}
+.complementary-items{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.complementary-item{
+  display: flex;
+  gap: 1.5rem;
+}
+.complementary-year{
+  margin: 0;
+  font-weight: 700;
+}
+.complementary-course{
+  margin: 0;
+}
+@media screen and (min-width: 768px){
+  .main-container{
+    gap: 0;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+  .profile{
+    grid-column: 1/5;
+    grid-row: 1/4;
+    padding-block-start: 3rem;
+  }
+  .contact{
+    grid-column: 1/5;
+    grid-row: 4/8;
+    padding-block-start: 1rem;
+  }
+  .languages{
+    grid-column: 1/5;
+    grid-row: 8/10;
+    /* padding-block-start: 1.5rem; */
+  }
+  .skills{
+    background-color: var(--gray10);
+    grid-column: 7/-1;
+    grid-row: 1/4;
+    padding: 0 1rem;
+    padding-block-start: 3rem;
+  }
+  .education{
+    background-color: var(--gray10);
+    grid-column: 7/-1;
+    grid-row: 4/6;
+    padding: 0 1rem;
+    padding-block-start: 1rem;
+  }
+  .complementary{
+    background-color: var(--gray10);
+    block-size: max-content;
+    grid-column: 7/-1;
+    grid-row: 6/11;
+    padding: 1rem 1rem;
+    padding-block-end: 2rem;
+  }
+}
+@media screen and (min-width: 1200px){
+  .main-container{
+    grid-template-rows: repeat(9, 1fr);
+  }
+}
