@@ -1,0 +1,40 @@
+.header{
+  margin-block-end: 12.5rem;
+  padding: .9rem;
+  padding-inline-end: 1.2rem;
+}
+.header-list{
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.header-link{
+  color: var(--white);
+  cursor: pointer;
+  display: block;
+  font-size: .8rem;
+  text-decoration: none;
+  transition: transform .2s;
+}
+.header-link:active{
+  transform: scale(.9);
+}
+.header-link:hover{
+  text-decoration: underline;
+}
+.header-link img{
+  display: block;
+  margin-inline-start: .7rem;
+}
+.header-link.is-circle img{
+  border-radius: 50%;
+  inline-size: 2rem;
+  block-size: 2rem;
+}
+.header-link.is-white img{
+  filter: invert(1);
+}
