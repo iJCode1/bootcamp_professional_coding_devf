@@ -1,0 +1,26 @@
+.bandera{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 17.5rem;
+  height: 9.375rem;
+  grid-template-areas: 
+  "cuadro1 cuadro2 cuadro2"
+  "cuadro3 cuadro4 cuadro4";
+  gap: 20px;
+}
+.cuadro{
+  background-color: red;
+}
+.cuadro1{
+  grid-area: cuadro1;
+}
+.cuadro2{
+  grid-area: cuadro2;
+}
+.cuadro3{
+  grid-area: cuadro3;
+}
+.cuadro4{
+  grid-area: cuadro4;
+}
