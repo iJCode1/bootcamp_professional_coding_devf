@@ -24,7 +24,7 @@ let $dot = d.getElementById("calc-dot");
 // Asignando el valor por defecto al abrir la calculadora
 $screen.textContent = null;
 
-let ope = ''; // Variable para guadar el operador o simbolo que presione usuario
+let ope = ''; // Variable para guadar el operador o simbolo que presione el usuario
 let result = undefined; // Variable para guardar el resultado de la operación
 let error = ""; //Variable para guardar un error en caso exista
 let array = []; //arreglo para guardar todo lo ingresado
