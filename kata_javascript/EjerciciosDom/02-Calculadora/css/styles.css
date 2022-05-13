@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+:root{
+  --blue: #C4DDFF;
+  --blue10: #112B3C;
+  --white: #FFF;
+  --white10: #FEFBE7;
+  --brown: #DEA057;
+  --blue30: #035397; 
+  --orange: #F66B0E;
+  --red: #FF5F00;
+  --grey: #383838;
+  --green: #A2B38B;
+}
+body{
+  margin: 0;
+}
+.calc{
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  max-inline-size: 22rem;
+  inline-size: 90%;
+  margin: 0 auto;
+  margin-block-start: 2rem;
+  background-color: var(--blue);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  padding-block-end: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.calc-error{
+  color: var(--red);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.calc-screen{
+  background-color: var(--blue10);
+  color: var(--white);
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: .25rem;
+  border: 10px solid black;
+  block-size: 3.5rem;
+  overflow-x: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.calc-second{
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+}
+.calc-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  margin: 0;
+  background-color: var(--white10);
+  color: var(--grey);
+  transition: transform .2s;
+  cursor: pointer;
+  user-select: none;
+}
+.calc-button:active{
+  transform: scale(.9);
+}
+.calc-clean,
+.calc-ope,
+.calc-equal,
+.calc-delete{
+  font-weight: 700;
+  color: var(--white);
+}
+.calc-clean{
+  grid-column-start: 3;
+  background-color: #F66B0E;
+}
+.calc-ope{
+  background-color: var(--brown);
+}
+.calc-equal{
+  background-color: var(--blue30);
+}
+.calc-delete{
+  background-color: var(--green);
+}
+.calc-button.is-big{
+  font-size: 1.8rem;
+}
