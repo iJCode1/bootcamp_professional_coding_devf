@@ -1,0 +1,35 @@
+.header{
+  block-size: 35rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(225deg, #32132590 0%, #220f3390 50%, #091d2b90 100%), url('../assets/img/headerRubik.webp');
+  inline-size: 100%;
+  background-position: center;
+}
+.search-card,
+.main-card .card{
+  border-radius: .5rem;
+}
+.main{
+  block-size: auto;
+  background-image: linear-gradient(to right bottom, #c2abfb, #b0abfa, #9eabf8, #8cabf5, #7aaaf0);
+}
+.card-image img{
+  display: block;
+}
+.card-image .object-fit{
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+@media screen and (min-width: 992px){
+  .header{
+    block-size: 25rem;
+  }
+  .mb-sm-3,
+  .mb-sm-4{
+    margin-bottom: 0!important;
+  }
+}
