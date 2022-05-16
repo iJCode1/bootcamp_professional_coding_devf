@@ -51,3 +51,16 @@
 ![buscador](https://raw.githubusercontent.com/iJCode1/devf_professional_coding/main/kata_javascript/EjerciciosDom/images/carrera.png)
 
 </center>
+
+### Galería 1
+> _En esta galería se puede ir jugando con las imágenes que se mostrará en grande_
+
+<a href="https://ijcode1.github.io/devf_professional_coding/kata_javascript/EjerciciosDom/05-EjercicioGaleria1/" target="_blank">🌐 Demo</a>
+
+<a href="https://github.com/iJCode1/devf_professional_coding/tree/main/kata_javascript/EjerciciosDom/05-EjercicioGaleria1" target="_blank">💻 Repositorio</a>
+
+<center>
+
+![galeria](https://raw.githubusercontent.com/iJCode1/devf_professional_coding/main/kata_javascript/EjerciciosDom/images/galeria1.png)
+
+</center>
