@@ -38,3 +38,16 @@
 ![buscador](https://raw.githubusercontent.com/iJCode1/devf_professional_coding/main/kata_javascript/EjerciciosDom/images/buscadorCubosRubik.png)
 
 </center>
+
+### Jueguito de Carreras
+> _El buscador de Cubos Rubik permite filtrar los cubos a partir de ciertos criterios como 'nombre, categoría y marca'_
+
+<a href="https://ijcode1.github.io/devf_professional_coding/kata_javascript/EjerciciosDom/04-JueguitoCarrera/juego.html" target="_blank">🌐 Demo</a>
+
+<a href="https://github.com/iJCode1/devf_professional_coding/tree/main/kata_javascript/EjerciciosDom/04-JueguitoCarrera" target="_blank">💻 Repositorio</a>
+
+<center>
+
+![buscador](https://raw.githubusercontent.com/iJCode1/devf_professional_coding/main/kata_javascript/EjerciciosDom/images/carrera.png)
+
+</center>
