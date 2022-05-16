@@ -64,3 +64,16 @@
 ![galeria](https://raw.githubusercontent.com/iJCode1/devf_professional_coding/main/kata_javascript/EjerciciosDom/images/galeria1.png)
 
 </center>
+
+### Galería 2
+> _Galería 2 es un sitio donde los usuarios pueden ver la 'imagen, título y descripción' de cientos de flores en el mundo a partir de su selección_
+
+<a href="https://ijcode1.github.io/devf_professional_coding/kata_javascript/EjerciciosDom/06-EjercicioGaleria2" target="_blank">🌐 Demo</a>
+
+<a href="https://github.com/iJCode1/devf_professional_coding/tree/main/kata_javascript/EjerciciosDom/06-EjercicioGaleria2" target="_blank">💻 Repositorio</a>
+
+<center>
+
+![galeria2](https://raw.githubusercontent.com/iJCode1/devf_professional_coding/main/kata_javascript/EjerciciosDom/images/galeria2.png)
+
+</center>
