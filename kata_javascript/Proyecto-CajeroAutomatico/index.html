@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iJCode - Cajero Automático</title>
+  <link rel="shortcut icon" href="./assets/icons/favicon.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="login bg-indigo-400 flex items-center">
+    <div class="container mx-auto w-11/12 p-4 md:p-10 flex items-center h-screen justify-center">
+      <div class="login-card bg-white flex flex-col lg:flex-row items-center w-full rounded-md">
+        <div class="card-image w-full lg:w-2/4">
+        </div>
+        <div class="card-body p-5 md:p-10 w-full lg:w-2/4 flex flex-col content-center">
+          <h2 class="text-4xl md:text-5xl font-bold text-black font-normal text-center mb-12">Cajero Automático</h2>
+          <form class="card-form">
+            <label class="block mb-4">
+              <span class="block text-sm font-medium text-slate-700">Correo electronico</span>
+              <input type="email" class="form-input peer border-2 border-neutral-300 px-2 py-0.5 w-full rounded-md" required/>
+              <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+                Por favor, introduzca una dirección de correo electrónico válida
+              </p>
+            </label>
+            <label class="block mb-10">
+              <span class="block text-sm font-medium text-slate-700">Contraseña</span>
+              <input type="password" class="form-input peer border-2 border-neutral-300 px-2 py-0.5 w-full rounded-md" required/>
+              <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+                Por favor, introduzca una contraseña válida
+              </p>
+            </label>
+            <button class="w-full bg-blue-600 hover:bg-blue-500 active:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 text-white px-5 py-2 rounded-lg">
+              Ingresar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

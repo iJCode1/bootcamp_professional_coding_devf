@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+:root{
+  --mainFont: 'Mukta', sans-serif;
+}
+body{
+  font-family: var(--mainFont);
+}
+.login{
+  background-image: linear-gradient(to right top, #502b7890, #3c3c8090, #2a488190, #23527f90, #2c5a7990), url('../assets/img/fondo.webp');
+  background-position: center;
+  background-size: cover;
+}
+.login-card{
+  height: 100%;
+  max-inline-size: 62.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.card-image{
+  block-size: 100%;
+  background-image: url('../assets/img/fondo.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+.form-imput{
+  font-family: var(--mainFont);
+}
+@media screen and (min-width: 1024px){
+  .login-card{
+    max-block-size: 37.5rem;
+  }
+}
