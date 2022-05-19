@@ -22,6 +22,7 @@ const validateAccount = (data, email, pass) =>{
       if( ( findEmail[0].correo === email ) && ( findEmail[0].contraseña === pass ) ){
         // Se almacena en el localStorage la clave 'email' con el valor del correo
         localStorage.setItem('email', `${findEmail[0].correo}`);
+        localStorage.setItem('name', `${findEmail[0].nombre}`);
         localStorage.setItem('money', `${findEmail[0].saldo}`);
         window.location.href = './cajero.html';
       }else{

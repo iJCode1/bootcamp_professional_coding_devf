@@ -19,6 +19,7 @@ const $withdrawMoney = d.querySelector('#withdrawMoney');
 const $atm_screen_paragraph = d.querySelector('#atm-screen-paragraph');
 let moneyArray = [];
 let userEmail;
+let userName;
 let userMoney;
 let keyboardIsActive = false;
 let isDeposit = false;
@@ -78,7 +79,6 @@ const withdrawMoney = () => {
     showMessage('Ingrese la cantidad que desea retirar ...', false);
     keyboardIsActive = true;
   }
-  // showMessage()
 }
 const decreaseBalance = () => {
   let currentMoney = Number(retrieveLocalStorage('money'));
@@ -89,8 +89,7 @@ const decreaseBalance = () => {
     setTimeout(()=>{
       moneyArray = [];
       showMessage('Ingrese un saldo menor a retirar ...');
-      // showMessage('Buen día usuario, seleccione una opción');
-    },1000)
+    },1500)
   }else if (finalBalance >= 10) {
     localStorage.setItem('money', `${finalBalance}`);
     moneyArray = [];
@@ -103,6 +102,10 @@ const cleanAll = () => {
 
 }
 // *************** Declaración de eventos ***************
+d.addEventListener('DOMContentLoaded', ()=>{
+  userName = localStorage.getItem('name');
+  $atm_screen_paragraph.textContent = `Bienvenid@ ${userName} ! Selecciona una opción ...`;
+});
 $atm_button_zero.addEventListener('click', () => {
   if (keyboardIsActive) {
     moneyArray.push('0');
@@ -198,10 +201,11 @@ $withdrawMoney.addEventListener('click', () => {
 $logout.addEventListener('click', () => {
   isDeposit = false;
   isWithdraw = false;
-  showMessage("Que tenga un buen día 🛡️");
   localStorage.removeItem('money');
+  localStorage.removeItem('name');
   localStorage.removeItem('email');
+  showMessage("Que tenga un buen día!");
   setTimeout(() => {
     window.location.href = './index.html';
-  }, 2000)
+  }, 1500)
 });

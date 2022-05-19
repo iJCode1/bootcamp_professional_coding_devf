@@ -1,22 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
 :root{
   --mainFont: 'Oxygen', sans-serif;
+  --primary: #97C4B8;
   --white: #FFFFFF;
   --red: #FF4949;
   --green: #36AE7C;
+  --green10: #add2ab;
+  --grey: #6b6f74dc;
+  --black: rgba(20, 20, 20, 0.857);
 }
-/* body{
-  min-block-size: 100vh;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
+body{
   font-family: var(--mainFont);
-} */
-/* .container{
-  max-inline-size: 75rem;
-  inline-size: 100%;
-  margin: 0 auto;
-} */
+}
 .atm{
   inline-size: 100%;
   margin: 0 auto;
@@ -24,21 +19,24 @@
   justify-content: center;
 }
 .atm-body{
+  border-radius: 1rem;
+  box-shadow: 9px 9px #F2F2F2, 18px 18px #28392cdf;
   box-sizing: border-box;
-  background-color: #7FB5FF;
-  inline-size: 90%;
+  background-color: var(--primary);
+  inline-size: 95%;
   max-inline-size: 24rem;
   min-inline-size: 17.5rem;
   block-size: 32rem;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
 }
 .atm-screen{
   box-sizing: border-box;
-  background-color: #B7CADB;
+  background-color: var(--green10);
   inline-size: 100%;
   block-size: 14rem;
   margin-block-end: 1rem;
-  border: 3rem solid #1A132F;
+  border: 3rem solid var(--black);
+  border-radius: 1rem;
   border-block-start-width: 2rem;
   border-block-end-width: 2rem;
   position: relative;
@@ -46,24 +44,28 @@
 .atm-screen-paragraph{
   position: absolute;
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .atm-optionsLeft, 
 .atm-optionsRight{
   position: absolute;
 }
 .atm-optionsLeft{
-  inset-inline-start: -5.5rem;
+  inset-inline-start: -5rem;
 }
 .atm-optionsRight{
-  inset-inline-end: -5.5rem;
+  inset-inline-end: -5rem;
 }
 .atm-option{
+  cursor: pointer;
+  color: var(--white);
   box-sizing: border-box;
-  background-color: #FDF6EC;
+  background-color: var(--grey);
+  font-weight: 700;
+  font-size: .9rem;
   overflow-wrap: break-word;
-  inline-size: 5.625rem;
-  padding: .5rem;
+  inline-size: 5rem;
+  padding: .25rem;
   margin-block-end: 1rem;
   transition: transform .2s;
 }
@@ -80,7 +82,7 @@
   text-align: center;
 }
 .atm-button{
-  background-color: #C4DDFF;
+  background-color: #DAE5D0;
   inline-size: 100%;
   block-size: 3rem;
   display: flex;
@@ -89,7 +91,7 @@
   cursor: pointer;
   transition: transform .2s;
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 700;
   border-radius: .5rem;
 }
@@ -103,4 +105,12 @@
 .atm-button-accept{
   background-color: var(--green);
   color: white;
+}
+@media screen and (min-width: 640px){
+  .atm-screen-paragraph{
+    font-size: 1.2rem;
+  }
+  .atm-button{
+    font-size: 1.3rem;
+  }
 }

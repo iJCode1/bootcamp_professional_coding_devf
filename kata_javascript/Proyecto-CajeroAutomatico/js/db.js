@@ -20,4 +20,18 @@ const cuentas = [
     contraseña: '01_mauiCortez',
     saldo: 67,
   },
+  {
+    id_cliente: 4,
+    nombre: "Joel",
+    correo: 'joel17@gmail.com',
+    contraseña: 'superOreo17',
+    saldo: 70,
+  },
+  {
+    id_cliente: 5,
+    nombre: "Julieta",
+    correo: 'julieta.ver01@ferti.com',
+    contraseña: 'Juli_ferti01',
+    saldo: 67,
+  },
 ];
