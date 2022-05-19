@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
+:root{
+  --mainFont: 'Oxygen', sans-serif;
+  --white: #FFFFFF;
+  --red: #FF4949;
+  --green: #36AE7C;
+}
+/* body{
+  min-block-size: 100vh;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  font-family: var(--mainFont);
+} */
+/* .container{
+  max-inline-size: 75rem;
+  inline-size: 100%;
+  margin: 0 auto;
+} */
+.atm{
+  inline-size: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.atm-body{
+  box-sizing: border-box;
+  background-color: #7FB5FF;
+  inline-size: 90%;
+  max-inline-size: 24rem;
+  min-inline-size: 17.5rem;
+  block-size: 32rem;
+  padding: 1.5rem;
+}
+.atm-screen{
+  box-sizing: border-box;
+  background-color: #B7CADB;
+  inline-size: 100%;
+  block-size: 14rem;
+  margin-block-end: 1rem;
+  border: 3rem solid #1A132F;
+  border-block-start-width: 2rem;
+  border-block-end-width: 2rem;
+  position: relative;
+}
+.atm-screen-paragraph{
+  position: absolute;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+.atm-optionsLeft, 
+.atm-optionsRight{
+  position: absolute;
+}
+.atm-optionsLeft{
+  inset-inline-start: -5.5rem;
+}
+.atm-optionsRight{
+  inset-inline-end: -5.5rem;
+}
+.atm-option{
+  box-sizing: border-box;
+  background-color: #FDF6EC;
+  overflow-wrap: break-word;
+  inline-size: 5.625rem;
+  padding: .5rem;
+  margin-block-end: 1rem;
+  transition: transform .2s;
+}
+.atm-option:active{
+  transform: scale(.9);
+}
+.atm-optionsLeft .atm-option{
+  margin-block-end: 1rem;
+}
+.atm-buttons{
+  display: grid;
+  gap: .8rem;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+.atm-button{
+  background-color: #C4DDFF;
+  inline-size: 100%;
+  block-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform .2s;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: .5rem;
+}
+.atm-button:active{
+  transform: scale(.9);
+}
+.atm-button-delete{
+  background-color: var(--red);
+  color: white;
+}
+.atm-button-accept{
+  background-color: var(--green);
+  color: white;
+}

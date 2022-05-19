@@ -20,6 +20,9 @@ const validateAccount = (data, email, pass) =>{
     let findEmail = data.filter((el) => el.correo === email);
     if(findEmail.length === 1){
       if( ( findEmail[0].correo === email ) && ( findEmail[0].contraseña === pass ) ){
+        // Se almacena en el localStorage la clave 'email' con el valor del correo
+        localStorage.setItem('email', `${findEmail[0].correo}`);
+        localStorage.setItem('money', `${findEmail[0].saldo}`);
         window.location.href = './cajero.html';
       }else{
         return messageError("La contraseña no coincide con el correo ingresado, verifíquelo por favor", $inputPasswordMessage);

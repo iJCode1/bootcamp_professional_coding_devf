@@ -4,7 +4,7 @@ const cuentas = [
     nombre: "Mali",
     correo: 'mali1969@gamil.com',
     contraseña: 'Gatito123',
-    saldo: 20, 
+    saldo: 200, 
   },
   {
     id_cliente: 2,
