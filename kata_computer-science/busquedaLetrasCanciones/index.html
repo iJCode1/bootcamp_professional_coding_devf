@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/icons/musica.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>iJCode - Búsqueda de Letras de Canciones</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h2 class="header-title">Búsqueda de letras de canciones</h2>
+    </div>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <div class="main-header">
+        <p class="main-title">Busca por artistas y cancion</p>
+        <form class="main-form">
+          <div class="form-artist">
+            <label class="form-label" for="artistInput">artista</label>
+            <input class="form-input" type="text" required placeholder="Motel" id="artistInput">
+          </div>
+          <div class="form-song">
+            <label class="form-label" for="songInput">canción</label>
+            <input class="form-input" type="text" required placeholder="Esferas" id="songInput">
+          </div>
+          <button class="form-cta" id="form-search">Buscar</button>
+        </form>
+      </div>
+      <div class="" id="main-body">
+        <p class="main-message" id="main-message"></p>
+      </div>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
