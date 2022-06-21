@@ -1,0 +1,20 @@
+@import './nav.css';
+@import './popular.css';
+
+@font-face {
+  font-family: 'NetflixN';
+  src: url('../assets/fonts/NetflixSans-Regular.otf');
+}
+
+:root{
+  --black10: #141414;
+  --white: #fff;
+  --gray10: #e5e5e5;
+}
+
+body{
+  margin: 0;
+  font-family: 'NetflixN';
+  background-color: var(--black10);
+  color: var(--gray10);
+}

@@ -1,0 +1,25 @@
+.pop-movies{
+  padding: 0 0.75rem;
+}
+
+.popular-images{
+  display: grid;
+  grid-auto-flow: column;
+  gap: .25rem;
+  overflow: scroll;
+}
+
+.popular-image{
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.popular-images::-webkit-scrollbar {
+  display: none;  /* Ocultar scroll */
+}
+
+@media screen and (min-width: 768px){
+  .pop-movies{
+    padding: 0 3.375rem;
+  }
+}
