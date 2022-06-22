@@ -1,0 +1,104 @@
+.trailer{
+  position: relative;
+  margin-block-start: 3.75rem;
+}
+
+.trailer-info{
+  position: absolute;
+  top: 40%;
+  transform: translateY(-40%);
+  left: 0.75rem;
+}
+
+.trailer-text{
+  width: 60%;
+  height: 80px;
+  background-image: url('../assets/img/introImage.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left bottom;
+}
+
+.trailer-paragraph{
+  width: 70%;
+  font-size: .5rem;
+  margin: 0;
+  margin-bottom: .5rem;
+}
+
+.trailer-video{
+  width: 100%;
+}
+
+.trailer-buttons{
+  width: 80%;
+}
+
+.trailer-ctas{
+  display: flex;
+  gap: .8rem;
+}
+
+.trailer-button{
+  border-radius: .25rem;
+  border: none;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  padding: 0rem .8rem;
+  font-size: .5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.trailer-button > svg{
+  width: .8rem;
+}
+
+.trailer-button.is-info{
+  background-color: var(--gray20);
+  color: var(--white);
+}
+
+@media screen and (min-width: 550px){
+  .trailer-button{
+    font-size: .7rem;
+    padding: .2rem 1rem;
+  }
+
+  .trailer-button > svg{
+    width: 1rem;
+  }  
+
+  .trailer-paragraph{
+    width: 50%;
+    font-size: .7rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .trailer-text{
+    left: 3.375rem;
+    height: 150px;
+  }
+
+  .trailer-info{
+    left: 3.375rem;
+  }
+
+  .trailer-button{
+    font-size: 1rem;
+    padding: .5rem 1rem;
+  }
+
+  .trailer-button > svg{
+    width: 1rem;
+  }  
+
+  .trailer-paragraph{
+    width: 40%;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}

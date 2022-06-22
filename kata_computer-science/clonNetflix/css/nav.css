@@ -5,6 +5,11 @@
   justify-content: space-between;
   padding: 1.1rem 0.75rem;
   padding-right: calc(3.375rem + 20px);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .nav-links{

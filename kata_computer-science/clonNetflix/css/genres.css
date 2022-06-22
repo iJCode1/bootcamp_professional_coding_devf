@@ -1,0 +1,26 @@
+.genre-movies{
+  padding: 0 0.75rem;
+  margin-bottom: 3rem;
+}
+.genre-title{
+  margin: 0;
+  margin-bottom: 0.8rem;
+}
+.genre-image{
+  object-fit: cover;
+  object-position: bottom;
+}
+.genre-images{
+  display: grid;
+  grid-auto-flow: column;
+  gap: .25rem;
+  overflow: scroll;
+}
+.genre-images::-webkit-scrollbar{
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .genre-movies{
+      padding: 0 3.375rem;
+  }
+}
