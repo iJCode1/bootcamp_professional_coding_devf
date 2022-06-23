@@ -1,6 +1,7 @@
 @import './nav.css';
 @import './trailer.css';
 @import './genres.css';
+@import './detailsMovie.css';
 @import './popular.css';
 
 @font-face {
@@ -12,6 +13,7 @@
   --black10: #141414;
   --white: #fff;
   --gray10: #e5e5e5;
+  --gray15: #747474;
   --gray20: #6d6d6eb3;
 }
 

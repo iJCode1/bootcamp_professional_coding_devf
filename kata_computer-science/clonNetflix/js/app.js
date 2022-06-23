@@ -1,3 +1,6 @@
+// Importaciones
+// import getInfoMovie from './detailsMovie.js';
+
 // Creación de variables
 const API = "f933eabe2aa4d06a047606d9a76e9e88";
 let pathImage = "https://image.tmdb.org/t/p/original";
@@ -16,6 +19,7 @@ async function getPopularMovies(){
       $image.setAttribute("alt", `Poster de la pelicula ${data.results[i].title}`);
       $image.setAttribute("width", "221");
       $image.setAttribute("height", "124");
+      $image.setAttribute("id", data.results[i].id);
       $image.setAttribute("class", "popular-image");
       $image.setAttribute("src", `${pathImage}${data.results[i].poster_path}`);
       $popular_images.appendChild($image);
@@ -34,6 +38,7 @@ async function getGenresMovies(id, section){
       $image.setAttribute("alt", `Poster de la pelicula ${data.results[i].title}`);
       $image.setAttribute("width", "221");
       $image.setAttribute("height", "124");
+      $image.setAttribute("id", data.results[i].id);
       $image.setAttribute("class", "genre-image");
       $image.setAttribute("src", `${pathImage}${data.results[i].poster_path}`);
       section.appendChild($image);
@@ -44,7 +49,14 @@ async function getGenresMovies(id, section){
 }
 
 // Creación de eventos
+document.addEventListener("click", (e)=>{
+  if(e.target.classList[0] === "genre-image" || e.target.classList[0] === "popular-image"){
+    let id = e.target.getAttribute("id");
+    window.location.href = `./detailsMovie.html?id=${id}`;
+  }
+});
+
 getPopularMovies();
 getGenresMovies(27, $thriller_images);
-getGenresMovies(10749,$romance_images);
+getGenresMovies(10749, $romance_images);
 getGenresMovies(878, $fiction_images);

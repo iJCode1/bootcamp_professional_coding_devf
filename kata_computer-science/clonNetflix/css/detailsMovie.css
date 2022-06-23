@@ -1,0 +1,57 @@
+.details-movie{
+  margin-block-end: 2.5rem;
+}
+
+.detail-image{
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 25rem;
+  margin-top: 60px;
+  background-position: center;
+}
+
+.detail-body{
+  padding: 0rem 0.75rem;
+  margin-top: 3rem;
+}
+
+.detail-title{
+  font-size: 2rem;
+  margin: 0;
+}
+
+.detail-vote,
+.detail-runtime,
+.detail-genres,
+.detail-actors{
+  font-size: 1.3rem;
+}
+
+.detail-vote > .is-yellow{
+  color: yellow;
+}
+
+.is-gray{
+  color: var(--gray15);
+}
+
+
+.detail-link{
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.detail-link:hover{
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px){
+  .detail-body{
+    padding: 0 3.375rem;
+  }
+
+  .detail-title{
+    font-size: 3rem;
+  }
+}
