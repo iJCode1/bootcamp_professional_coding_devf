@@ -1,26 +1,81 @@
 .genre-movies{
   padding: 0 0.75rem;
   margin-bottom: 3rem;
+  position: relative;
 }
+
 .genre-title{
   margin: 0;
   margin-bottom: 0.8rem;
 }
+
 .genre-image{
   object-fit: cover;
   object-position: bottom;
 }
+
 .genre-images{
   display: grid;
   grid-auto-flow: column;
   gap: .25rem;
   overflow: scroll;
 }
+
+.genre-images > .genre-left,
+.genre-images > .genre-right{
+  position: absolute;
+  padding: 0 0.75rem;
+  inline-size: 2rem;
+  aspect-ratio: 1/1;
+  top: 70%;
+  transform: translateY(-70%);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  --white: rgba(255, 255, 255, 0.60);
+  background-color: var(--white);
+  padding: .1rem;
+  border-radius: 50%;
+  filter: invert(1);
+  display: none;
+}
+
+.genre-images > .genre-left{
+  background-image: url('../assets/icon/flechaIzquierda.png');
+  inset-inline-start: 0;
+  left: 1rem;
+}
+
+.genre-images > .genre-right{
+  background-image: url('../assets/icon/flechaDerecha.png');
+  inset-inline-end: 0;
+  right: 1rem;
+}
+
+.genre-images:hover > .genre-left,
+.genre-images:hover > .genre-right{
+  display: block;
+}
+
 .genre-images::-webkit-scrollbar{
   display: none;
 }
+
 @media screen and (min-width: 768px) {
   .genre-movies{
-      padding: 0 3.375rem;
+    padding: 0 3.375rem;
+  }
+
+  .genre-images>.genre-left,
+  .genre-images>.genre-right {
+    inline-size: 3rem;
+  }
+
+  .genre-images > .genre-left{
+    left: 3.375rem;
+  }
+
+  .genre-images > .genre-right{
+    right: 3.375rem;;
   }
 }

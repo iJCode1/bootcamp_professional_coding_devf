@@ -1,6 +1,43 @@
 .pop-movies{
   padding: 0 0.75rem;
   margin-bottom: 3rem;
+  position: relative;
+}
+
+.popular-images > .pop-left,
+.popular-images > .pop-right{
+  position: absolute;
+  padding: 0 0.75rem;
+  inline-size: 2rem;
+  aspect-ratio: 1/1;
+  top: 70%;
+  transform: translateY(-70%);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: invert(1);
+  display: none;
+  --white: rgba(255, 255, 255, 0.60);
+  background-color: var(--white);
+  padding: .1rem;
+  border-radius: 50%;
+}
+
+.popular-images > .pop-left{
+  background-image: url('../assets/icon/flechaIzquierda.png');
+  inset-inline-start: 0;
+  left: 1rem;
+}
+
+.popular-images > .pop-right{
+  background-image: url('../assets/icon/flechaDerecha.png');
+  inset-inline-end: 0;
+  right: 1rem;
+}
+
+.popular-images:hover > .pop-left,
+.popular-images:hover > .pop-right{
+  display: block;
 }
 
 .popular-images{
@@ -22,5 +59,18 @@
 @media screen and (min-width: 768px){
   .pop-movies{
     padding: 0 3.375rem;
+  }
+
+  .popular-images > .pop-left,
+  .popular-images > .pop-right{
+    inline-size: 3rem;
+  }
+
+  .popular-images > .pop-left{
+    left: 3.375rem;
+  }
+
+  .popular-images > .pop-right{
+    right: 3.375rem;;
   }
 }

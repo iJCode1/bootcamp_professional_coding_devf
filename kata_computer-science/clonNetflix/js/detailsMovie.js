@@ -53,21 +53,19 @@ export default async function getInfoMovie(){
     } 
 
     $detail_actors.textContent = "Actores: ";
+    console.log(firstActors.length);
     for (let i = 0; i < firstActors.length; i++) {
       let $genresLink = document.createElement("a");
       $genresLink.textContent = "Actores: ";
       $genresLink.setAttribute("href", "#");
       $genresLink.setAttribute("class", "detail-link");
-      if(i < dataMovie.genres.length - 1){
+      if(i < firstActors.length - 1){
         $genresLink.innerHTML = `<span class="is-gray">${firstActors[i]},</span> `;
       }else{
         $genresLink.innerHTML = `<span class="is-gray">${firstActors[i]}.</span> `
       }
       $detail_actors.appendChild($genresLink);
     }
-
-    console.log(firstActors);
-
   }catch(e){
     console.error(e);
   }
