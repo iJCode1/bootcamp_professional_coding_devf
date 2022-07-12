@@ -1,6 +1,7 @@
 const http = require('http');
 const url = require('url');
 const fs = require('fs');
+const colors = require("colors");
 
 const server = http.createServer((request, response)=>{
   // Paso 1: Obtener la URL, concretamente la Path de la request.
@@ -46,11 +47,17 @@ const server = http.createServer((request, response)=>{
       const status = 404;
       const mimeType = {'Content-Type': 'text/html'};
       response.writeHead(status, mimeType);
-      response.write("<html> <body> <h2>Error 404!</h2> </body> </html>");
+      response.write("<html> <body> <h2>Dio Error 404!</h2> </body> </html>");
       response.end();
     }
   })
 });
 
 server.listen(8080);
-console.log('Inicie mi servidor de nuevo!');
+console.log('Inicie mi servidor de nuevo!'.rainbow);
+
+/**
+ * RETO
+ * 1. Quitar la repeticion de la llamada a los metodos writeHead, write y end
+ * 2. Quitar el texto en duro 'Content-Type'
+ */

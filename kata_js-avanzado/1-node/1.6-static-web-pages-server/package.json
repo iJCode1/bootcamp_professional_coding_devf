@@ -1,0 +1,19 @@
+{
+  "name": "static-web-pages-server",
+  "version": "1.0.0",
+  "description": "Servidor sencillo que devuelve 2 páginas web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "demo": "nodemon index.js --no-color"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0"
+  }
+}
