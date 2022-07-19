@@ -1,27 +1,40 @@
 /**
- * BLOQUE 4: Promesas (pending, resolve, reject)
+ * BLOQUE 5: Async await (ES8 - 2017)
  */
-console.log('============== BLOQUE 4 ==============');
-const validandoPago = () => {
-    setTimeout(() => {
-        console.log('Revisando con el banco y mostrando un loader...');
-    }, 0);
-}
 
- const promiseValidandoPago = () => {
+// async function promiseValidandoPago() {
+//     return 44;
+// }
+
+const promiseValidandoPago = () => {
     return new Promise((resolve, reject) => {
-        // Este setTimeout representa una operacion que depende de otra entidad
-        // en este caso simulas esa dependencia con tiempo
-        validandoPago();
-        resolve();
-        // if (validandoPago()) {
-        //     resolve();
-        // } else {
-        //     reject();
-        // }
+        // El codigo asincrono de validandoPago debe quedar dentro de la promise
+        setTimeout(() => {
+            // Este setTimeout representa una operacion que depende de otra entidad
+            // en este caso simulas esa dependencia con tiempo
+            console.log('2 Revisando con el banco y mostrando un loader...');
+            resolve();
+            // if (status === 200) {
+            //     resolve();
+            // } else {
+            //     reject(new Error('Este es mi custom error'));
+            // }
+        }, 0);
     })
 };
-console.log('Presiona el boton comprar'); 
-promiseValidandoPago().then(response => console.log('Tu paquete sera enviado :)') )
-    .then(/*doOtherThing*/)
-    .then(/*doOtherThing2*/)
+
+async function main() {
+    console.log('1 Presiona el boton comprar');     
+    try {
+        // lineas donde el codigo puede fallar
+        await promiseValidandoPago();
+        // const response = await promiseValidandoPago2();
+        // await promiseValidandoPago3();
+        // await promiseValidandoPago4();
+    } catch (error) {
+        console.log('error:', error);
+    }
+    console.log('3 Tu paquete sera enviado :)');
+}
+
+main();
