@@ -52,3 +52,21 @@ app.post('/shoes', (req, res)=>{
   const response = {status: 201, message: "Shoe created"};
   res.status(201).json(response);
 });
+
+// Partial edition: Patch
+app.patch('/shoes/:id', (req, res)=>{
+  const body = req.body;
+  const {id} = req.params;
+  const indexFounded = shoes.findIndex(shoe => shoe.id === id);
+  if(indexFounded !== -1){
+    const shoeCopy = { ...shoes[indexFounded] };
+    shoes[indexFounded] = { ...shoeCopy, ...body };
+    res.json( { message: "modified with success", body } );
+  }else{
+    res.send("Ese id no existe");
+  }
+
+});
+
+// Complete edition: Put
+
