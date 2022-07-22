@@ -82,3 +82,18 @@ app.put('/shoes/:id', (req, res)=>{
     res.send("Ese id no existe");
   }
 });
+
+// Delete: Delete
+app.delete('/shoes/:id', (req, res)=>{
+  const {id} = req.params;
+  const indexFounded = shoes.findIndex(shoe => shoe.id === parseInt(id));
+  if(indexFounded !== -1){
+    const shoesCopy = [...shoes];
+    shoesCopy.splice(indexFounded, 1);
+    shoes = [...shoesCopy];
+    console.log('shoes', shoes);
+    res.json( { message: "Eliminado!", id } );
+  }else{
+    res.send("Ese id no existe");
+  }
+});
