@@ -57,16 +57,28 @@ app.post('/shoes', (req, res)=>{
 app.patch('/shoes/:id', (req, res)=>{
   const body = req.body;
   const {id} = req.params;
-  const indexFounded = shoes.findIndex(shoe => shoe.id === id);
+  const indexFounded = shoes.findIndex(shoe => shoe.id === parseInt(id));
   if(indexFounded !== -1){
     const shoeCopy = { ...shoes[indexFounded] };
     shoes[indexFounded] = { ...shoeCopy, ...body };
+    // console.log(shoes);
     res.json( { message: "modified with success", body } );
   }else{
     res.send("Ese id no existe");
   }
-
 });
 
 // Complete edition: Put
-
+app.put('/shoes/:id', (req, res)=>{
+  const body = req.body;
+  const {id} = req.params;
+  const indexFounded = shoes.findIndex(shoe => shoe.id === parseInt(id));
+  if(indexFounded !== -1){
+    const shoeCopy = { ...shoes[indexFounded] };
+    shoes[indexFounded] = { ...shoeCopy, ...body };
+    // console.log(shoes);
+    res.json( { message: "modified with success", body } );
+  }else{
+    res.send("Ese id no existe");
+  }
+});
