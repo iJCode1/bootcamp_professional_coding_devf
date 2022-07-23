@@ -22,7 +22,7 @@ class ShoesServices{
         this.shoes.push(newShoe);
         // Paso 6.1.6: En caso de éxito, usar resolve()
         resolve();
-      }, 2000);
+      }, 1000);
     });
   }
 
@@ -37,24 +37,62 @@ class ShoesServices{
           resolve(filterData);
         }
         resolve(this.shoes);
-      }, 2000);
+      }, 1000);
     })
   }
 
-  findOne(){
-  
+  findOne(id){
+    return new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+        const shoe = this.shoes.find(shoe => shoe.id === parseInt(id));
+        if(shoe){
+          resolve(shoe);
+        }
+      }, 1000);
+    });
   }
 
-  editPartial(){
-  
+  editPartial(id, body){
+    return new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+        const indexFounded = this.shoes.findIndex(shoe => shoe.id === parseInt(id));
+        if(indexFounded !== -1){
+          let shoesCopy = [...this.shoes];
+          const newBody = this.shoes[indexFounded];
+          shoesCopy[indexFounded] = { ...newBody, ...body }
+          this.shoes = [ ...shoesCopy ];
+          resolve();
+        }
+      }, 1000);
+    });
   }
 
-  editComplete(){
-  
+  editComplete(id, body){
+    return new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+        const indexFounded = this.shoes.findIndex(shoe => shoe.id === parseInt(id));
+        if(indexFounded !== -1){
+          let shoesCopy = [...this.shoes];
+          shoesCopy[indexFounded] = { id, ...body }
+          this.shoes = [ ...shoesCopy ];
+          resolve();
+        }
+      }, 1000);
+    });
   }
 
-  delete(){
-  
+  delete(id){
+    return new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+        const indexFounded = this.shoes.findIndex(shoe => shoe.id === parseInt(id));
+        if(indexFounded !== -1){
+          const shoesCopy = [...this.shoes];
+          shoesCopy.splice(indexFounded, 1);
+          this.shoes = [...shoesCopy];
+          resolve();
+        }
+      }, 1000);
+    });
   }
 
 };

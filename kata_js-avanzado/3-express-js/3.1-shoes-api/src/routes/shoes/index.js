@@ -27,10 +27,18 @@ shoesRouter.get('/', async(req, res)=>{
 });
 
 // Request param: Son utilizados para ejecurtar operaciones sobre un elemento especifico
-shoesRouter.get('/:id', (req, res)=>{
+shoesRouter.get('/:id', async(req, res)=>{
   const {id} = req.params;
-  const shoe = {id: 1, brand: 'Noke', price: 299, size: 29, searching: id};
-  res.json(shoe);
+  // const shoe = {id: 1, brand: 'Noke', price: 299, size: 29, searching: id};
+
+  try{
+    const foundedShoe = await shoesService.findOne(id);
+    res.status(200).send( { message: "Busqueda exitosa!", foundedShoe } );
+  }catch(error){
+    res.status(404).send( { message: "Ese id no existe!" } );
+  }
+
+  // res.json(shoe);
 });
 
 // http://localhost:3000/shoes/
@@ -48,47 +56,37 @@ shoesRouter.post('/', async(req, res)=>{
 });
 
 // Partial edition: Patch
-shoesRouter.patch('/:id', (req, res)=>{
+shoesRouter.patch('/:id', async(req, res)=>{
   const body = req.body;
   const {id} = req.params;
-  const indexFounded = shoes.findIndex(shoe => shoe.id === parseInt(id));
-  if(indexFounded !== -1){
-    const shoeCopy = { ...shoes[indexFounded] };
-    shoes[indexFounded] = { ...shoeCopy, ...body };
-    // console.log(shoes);
-    res.json( { message: "modified with success", body } );
-  }else{
-    res.send("Ese id no existe");
+  try{
+    await shoesService.editPartial(id, body);
+    res.status(200).send( { message: "Modificación Patch exitosa!", id } );
+  }catch(error){
+    res.status(404).send( { message: "Ese id no existe!" } );
   }
 });
 
 // Complete edition: Put
-shoesRouter.put('/:id', (req, res)=>{
+shoesRouter.put('/:id', async(req, res)=>{
   const body = req.body;
   const {id} = req.params;
-  const indexFounded = shoes.findIndex(shoe => shoe.id === parseInt(id));
-  if(indexFounded !== -1){
-    const shoeCopy = { ...shoes[indexFounded] };
-    shoes[indexFounded] = { ...shoeCopy, ...body };
-    // console.log(shoes);
-    res.json( { message: "modified with success", body } );
-  }else{
-    res.send("Ese id no existe");
+  try{
+    await shoesService.editComplete(id, body);
+    res.status(200).send( { message: "Modificación Put exitosa!", id } );
+  }catch(error){
+    res.status(404).send( { message: "Ese id no existe!" } );
   }
 });
 
 // Delete: Delete
-shoesRouter.delete('/:id', (req, res)=>{
+shoesRouter.delete('/:id', async(req, res)=>{
   const {id} = req.params;
-  const indexFounded = shoes.findIndex(shoe => shoe.id === parseInt(id));
-  if(indexFounded !== -1){
-    const shoesCopy = [...shoes];
-    shoesCopy.splice(indexFounded, 1);
-    shoes = [...shoesCopy];
-    console.log('shoes', shoes);
-    res.json( { message: "Eliminado!", id } );
-  }else{
-    res.send("Ese id no existe");
+  try{
+    await shoesService.delete(id);
+    res.status(200).send( { message: "Eliminación exitosa!" } );
+  }catch(error){
+    res.status(404).send( { message: "Ese id no existe!" } );
   }
 });
 
