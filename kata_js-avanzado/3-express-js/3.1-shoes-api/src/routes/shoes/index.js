@@ -1,11 +1,11 @@
+/*
+* Capa route, utilizada para el mapeo de los path
+*/
 const express = require('express');
 const shoesRouter = express.Router();
+const ShoesServices = require('../../services/shoes/');
 
-let shoes = [
-  {id: 1, brand: 'Noke', price: 299, size: 29},
-  {id: 2, brand: 'edidas', price: 599, size: 27},
-  {id: 3, brand: 'floxi', price: 430, size: 25.5},
-];
+const shoesService = new ShoesServices();
 
 // Url's para probar
 // http://localhost:3000/shoes/
@@ -13,13 +13,17 @@ let shoes = [
 
 // Query params: Filtrar información
 // http://localhost:3000/shoes/?page=1&pageSize=10&brand="noke"
-shoesRouter.get('/', (req, res)=>{
-  const {page, pageSize, brand} = req.query;
-
-  if(page && pageSize && brand){
-    res.json( {page, pageSize, brand} )
+shoesRouter.get('/', async(req, res)=>{
+  // Paso 6.1.1: Leer la request
+  const { price } = req.query;
+  try{
+    // Paso 6.1.2: Acceder a la capa 'service' para tener una respuesta
+    const shoes = await shoesService.findAll(price);
+    res.status(200).json(shoes);
+  }catch(error){
+    // Paso 6.1.3: Si hay un error al acceder al services, respondemos un error génerico
+    res.status(404).json( { message: 'No hay datos!' } )
   }
-  res.json(shoes);
 });
 
 // Request param: Son utilizados para ejecurtar operaciones sobre un elemento especifico
@@ -30,12 +34,17 @@ shoesRouter.get('/:id', (req, res)=>{
 });
 
 // http://localhost:3000/shoes/
-shoesRouter.post('/', (req, res)=>{
-  const newShow = req.body;
-  shoes.push(newShow);
-  console.log(shoes);
-  const response = {status: 201, message: "Shoe created"};
-  res.status(201).json(response);
+shoesRouter.post('/', async(req, res)=>{
+  // Paso 6.1.1: Leer la request
+  const newShoe = req.body;
+  try{
+    // Paso 6.1.2: Acceder a la capa 'service' para tener una respuesta
+    await shoesService.create(newShoe);
+    res.status(201).send()
+  }catch(error){
+    // Paso 6.1.3: Si hay un error al acceder al services, respondemos un error génerico
+    res.status(500).send( { message: 'Intente más tarde' } )
+  }
 });
 
 // Partial edition: Patch
