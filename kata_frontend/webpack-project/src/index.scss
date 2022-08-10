@@ -1,0 +1,14 @@
+$labelName: #345eee;
+
+.app{
+  .box{
+    border: 3px solid purple;
+    background-color: aqua;
+    width: 150px;
+    height: 200px;
+  }
+  label{
+    font-size: 2rem;
+    color: $labelName;
+  }
+}
