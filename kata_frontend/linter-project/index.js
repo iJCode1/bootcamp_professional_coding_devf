@@ -1,9 +1,8 @@
-const { suma } = require("./operations.js");
+/* eslint-disable strict */
+const { suma } = require('./operations');
 
-console.log("Hola con linter 🔥");
-
-const hello = () => console.log("Hola mundo");
+// eslint-disable-next-line no-console
+const hello = () => console.log('hi');
 
 hello();
-
-console.log(suma(10, 2));
+suma(20, 49);
