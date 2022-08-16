@@ -6,10 +6,10 @@ class Navbar extends React.Component{
     return (
       <div className='Navbar'>
         <div className='container-fluid'>
-          <a href="#" className='Navbar__brand'>
-            <span className='font-weight-light'>DevF</span>
-            <span className='font-weight-bold'>Online</span>
-          </a>
+          <div>
+            <span className='navbar-link font-weight-light'>DevF</span>
+            <span className='navbar-link font-weight-bold'>Online</span>
+          </div>
         </div>
       </div>  
     );
