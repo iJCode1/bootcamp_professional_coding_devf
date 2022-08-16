@@ -1,0 +1,27 @@
+.main{
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-areas: 'form badge';
+  gap: 1rem;
+  max-inline-size: 90%;
+  margin: 0 auto;
+  margin-block-start: 2em;
+}
+
+.Badge{
+  grid-area: badge;
+}
+
+.badgeForm{
+  grid-area: form;
+}
+
+.bForm{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.badge-label{
+  display: block;
+}

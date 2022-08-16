@@ -2,6 +2,7 @@ import Navbar from "./Components/Navbar";
 import Badge from './Components/Badge';
 import BadgeForm from './Components/BadgeForm';
 import React from "react";
+import './styles/Main.css';
 
 class App extends React.Component {
   state = {
@@ -25,8 +26,10 @@ class App extends React.Component {
     return (
       <>
         <Navbar />
-        <Badge firstName="Joel" lastName="DoMe" job="Frontend" username="iJCode1" state={this.state} />
-        <BadgeForm handleChangle={this.handleChangle} />
+        <main className="main">
+          <Badge firstName="Joel" lastName="DoMe" job="Frontend" username="iJCode1" state={this.state} />
+          <BadgeForm handleChangle={this.handleChangle} />
+        </main>
       </>
 
     )
