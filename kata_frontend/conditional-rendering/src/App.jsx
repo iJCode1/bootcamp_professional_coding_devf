@@ -14,10 +14,13 @@ function App() {
     return message;
   };
 
+  const h1ActiveStyles = {border: '3px solid purple', fontSize: '2rem'};
+  const h1InactiveStyles = {border: '3px solid #000', fontSize: '2rem'};
+
   return (
     <div className="App">
-      <h1>Vite + React</h1>
-      <div className="card">
+      <h1 className={ isActive ? 'title_active' : 'title_inactive' }>Vite + React</h1>
+      <div className="card" style={ isActive ? h1ActiveStyles : h1InactiveStyles }>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
