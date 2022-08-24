@@ -2,3 +2,11 @@
   box-shadow: rgba(107, 9, 255, 0.307) 5px 5px 7px 0px;
   border-radius: .25rem;
 }
+
+.select{
+  cursor: pointer;
+  /* color: red; */
+}
+.select:active{
+  color: red;
+}
