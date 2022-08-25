@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import CharacterDetail from './CharacterDetail';
+import {Link} from 'react-router-dom';
 import './Welcome.css';
 import axios from 'axios';
 
@@ -45,7 +46,10 @@ const Welcome = ( { setLoginStatus } ) => {
         charactersAray.length === 0 
         ? <h4>Cargando...</h4>
         : charactersAray.map( (character, index) => (
+          <Link to={`/character/${index + 1}`}>
             <p className='select' key={index} onClick={() => handleCharacterID(index+1) }>Nombre del personaje <span className='text-primary'>{character.name} - {character.height}</span></p>
+          </Link>
+            // <p className='select' key={index} onClick={() => handleCharacterID(index+1) }>Nombre del personaje <span className='text-primary'>{character.name} - {character.height}</span></p>
           ))
         }
 
